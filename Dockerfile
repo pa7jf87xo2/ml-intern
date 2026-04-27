@@ -47,11 +47,12 @@ RUN mkdir -p /app/session_logs /app/logs && \
 USER user
 
 # Set environment
+# Note: changed LOG_LEVEL to INFO to reduce noise in personal deployments
 ENV HOME=/home/user \
     PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
     PATH="/app/.venv/bin:$PATH" \
-    LOG_LEVEL=DEBUG
+    LOG_LEVEL=INFO
 
 # Expose port
 EXPOSE 7860
